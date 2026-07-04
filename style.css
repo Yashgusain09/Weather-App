@@ -1,0 +1,154 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+
+    background-image:url("images/default.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    transition:background-image 0.8s ease-in-out;
+    overflow:hidden;
+}
+
+/* Dark Overlay */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.35);
+    z-index:-1;
+}
+
+/* Glass Card */
+.container{
+    width:380px;
+    padding:30px;
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.3);
+
+    color:#fff;
+    text-align:center;
+
+    box-shadow:0 8px 35px rgba(0,0,0,.35);
+
+    animation:fadeIn 0.7s ease;
+}
+
+h1{
+    margin-bottom:20px;
+    font-size:32px;
+}
+
+.search-box{
+    display:flex;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.search-box input{
+    flex:1;
+    padding:12px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.search-box button{
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+
+    background:#2196F3;
+    color:white;
+
+    transition:0.3s;
+}
+
+.search-box button:hover{
+    background:#0d6efd;
+    transform:scale(1.05);
+}
+
+#weather h2{
+    margin-top:10px;
+    font-size:28px;
+}
+
+#weather h1{
+    font-size:60px;
+    margin:10px 0;
+}
+
+#weather h3{
+    font-size:24px;
+    margin-bottom:15px;
+    text-transform:capitalize;
+}
+
+#weather p{
+    margin:8px 0;
+    font-size:18px;
+}
+
+#weather img{
+    width:110px;
+    height:110px;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:500px){
+
+.container{
+    width:92%;
+    padding:20px;
+}
+
+.search-box{
+    flex-direction:column;
+}
+
+.search-box button{
+    width:100%;
+}
+
+#weather h1{
+    font-size:50px;
+}
+
+#weather h2{
+    font-size:24px;
+}
+}
